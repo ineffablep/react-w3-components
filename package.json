@@ -1,0 +1,26 @@
+{
+  "name": "react-w3-components",
+  "version": "0.1.0",
+  "private": true,
+  "devDependencies": {
+    "flow-bin": "^0.49.1",
+    "react-scripts": "1.0.10"
+  },
+  "dependencies": {
+    "history": "^4.6.3",
+    "react": "^15.6.1",
+    "react-dom": "^15.6.1",
+    "react-image": "^1.0.1",
+    "react-json-schema-form": "^1.0.7",
+    "react-router-dom": "^4.1.1",
+    "react-schema-views": "^1.0.1",
+    "uuid": "^3.1.0"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject",
+    "flow": "flow"
+  }
+}

@@ -1,0 +1,12 @@
+@import url('https://www.w3schools.com/w3css/4/w3pro.css');
+@import '~react-json-schema-form/index.css';
+.none {
+  display: none !important;
+}
+.show {
+  display: block !important;
+}
+.w3-theme {
+  color: #fff !important;
+  background-color: #ffc107 !important;
+}
