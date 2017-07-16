@@ -4,13 +4,14 @@ import Navbar from "./components/navbar";
 class App extends Component {
   render() {
     const { Schema } = { ...this.props };
-    let routes = [...Schema.leftLinks, ...Schema.rightLinks]
+    let routes = [...Schema.leftLinks.links, ...Schema.rightLinks.links]
       .reduce((a, b) => {
         return b.children ? a.concat(...b.children).concat(b) : a.concat(b);
       }, [])
       .map(_ => {
         return { url: _.path, json: _.json, text: _.text };
       });
+
     return (
       <div className="w3-row">
         <Navbar links={Schema} />

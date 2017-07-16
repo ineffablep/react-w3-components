@@ -7,13 +7,13 @@ import NotFound from "../../pages/notFound";
 import { IRoutes } from "../../types";
 
 const Routes = ({ routeList }: { routeList: Array<IRoutes> }) =>
-  <div className="w3-container">
+  <div className="w3-row">
     <Switch>
       {routeList.map(_ => {
         return (
           <Route
-            key={uuid.v4()}
             exact
+            key={uuid.v4()}
             path={_.url}
             render={() => <RenderPage json={_.json} text={_.text} />}
           />
