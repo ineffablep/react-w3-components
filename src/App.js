@@ -9,7 +9,14 @@ class App extends Component {
         return b.children ? a.concat(...b.children).concat(b) : a.concat(b);
       }, [])
       .map(_ => {
-        return { url: _.path, json: _.json, text: _.text };
+        return {
+          url: _.path,
+          json: _.json,
+          text: _.text,
+          title: _.title,
+          links: _.links,
+          metas: _.metas
+        };
       });
 
     return (

@@ -17,6 +17,9 @@
       {
         "path": "/",
         "text": "Home",
+        "title": "",
+        "links": [],
+        "metas": [],
         "className": "w3-hover-none",
         "activeClassName": "",
         "json": []

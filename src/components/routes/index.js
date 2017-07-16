@@ -15,7 +15,7 @@ const Routes = ({ routeList }: { routeList: Array<IRoutes> }) =>
             exact
             key={uuid.v4()}
             path={_.url}
-            render={() => <RenderPage json={_.json} text={_.text} />}
+            render={() => <RenderPage {..._} />}
           />
         );
       })}

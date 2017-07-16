@@ -1,5 +1,4 @@
 // @flow
-
 export interface IJson {
   path: string,
   text: string,
@@ -7,6 +6,17 @@ export interface IJson {
   props: any,
   children: any,
   schema: any
+}
+
+export interface ILink {
+  rel: string,
+  href: string
+}
+
+export interface IMeta {
+  property: string,
+  content: string,
+  name: string
 }
 
 export interface IRoutes {
