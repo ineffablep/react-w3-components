@@ -21,16 +21,19 @@ const RenderPage = ({
   return (
     <div className="w3-row w3-padding-top">
       <Helmet>
-        <title>
-          {title}
-        </title>
-        {metas.map(_ => {
-          return <meta {..._} key={uuid.v4()} />;
-        })}
+        {title &&
+          <title>
+            {title}
+          </title>}
+        {metas &&
+          metas.map(_ => {
+            return <meta {..._} key={uuid.v4()} />;
+          })}
 
-        {links.map(_ => {
-          return <link {..._} key={uuid.v4()} />;
-        })}
+        {links &&
+          links.map(_ => {
+            return <link {..._} key={uuid.v4()} />;
+          })}
       </Helmet>
       {!json || json.length === 0
         ? <h2>
