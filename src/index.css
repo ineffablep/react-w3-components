@@ -1,5 +1,41 @@
 @import url('https://www.w3schools.com/w3css/4/w3.css');
 @import '~react-json-schema-form/index.css';
+.w3-wrapper {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+.w3-main {
+  flex: 1 0 auto; /* 2 */
+  padding: var(--space) var(--space) 0;
+  width: 100%;
+}
+.w3-header,
+.w3-footer {
+  flex: none;
+}
+.w3-main::after {
+  content: '\00a0'; /* &nbsp; */
+  display: block;
+  margin-top: var(--space);
+  height: 0px;
+  visibility: hidden;
+}
+@media (--break-lg) {
+  .w3-main {
+    padding-top: var(--space-lg);
+  }
+  .w3-main::after {
+    margin-top: var(--space-lg);
+  }
+}
+
+.w3-main--full {
+  padding: 0;
+}
+.w3-main--full::after {
+  content: none;
+}
 .none {
   display: none;
 }

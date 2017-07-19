@@ -341,5 +341,15 @@
         ]
       }
     ]
+  },
+  "footer": {
+    "className": "w3-black",
+    "children": [
+      {
+        "component": "h2",
+        "className": "w3-container",
+        "text": "Hello I am footer"
+      }
+    ]
   }
 }

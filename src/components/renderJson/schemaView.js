@@ -9,7 +9,7 @@ import SlideShow from "../slideShow";
 import Progress from "../progress";
 import PercentageStats from "../stats/percentageStats";
 import NumberStats from "../stats/numberStats";
-
+import Footer from '../footer';
 const componentMap = {
   Form,
   Panel,
@@ -19,7 +19,8 @@ const componentMap = {
   Slide,
   PercentageStats,
   NumberStats,
-  Badge
+  Badge,
+  Footer
 };
 const SchemaView = new ReactSchemaViews();
 SchemaView.setComponentMap(componentMap);
