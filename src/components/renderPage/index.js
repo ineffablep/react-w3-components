@@ -1,23 +1,9 @@
-// @flow
 import React from "react";
 import uuid from "uuid";
 import { Helmet } from "react-helmet";
 import RenderJson from "../renderJson";
-import { IJson, IMeta, ILink } from "../../types";
 
-const RenderPage = ({
-  json,
-  text,
-  title,
-  links,
-  metas
-}: {
-  text: string,
-  title: string,
-  links: Array<ILink>,
-  metas: Array<IMeta>,
-  json: Array<IJson>
-}) => {
+const RenderPage = ({ json, text, title, links, metas }) => {
   return (
     <div className="w3-row w3-padding-top">
       <Helmet>

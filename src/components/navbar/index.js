@@ -40,27 +40,34 @@ class Navbar extends Component {
   }
 
   renderLogo(logo) {
-    const { link, image } = logo;
+    const { link, image, textClassName } = logo;
 
     return (
       <Link
-        to={link.to ? link.to : "/"}
+        to={link.path ? link.path : "/"}
         className={
           "w3-bar-item w3-button w3-wide w3-padding w3-logo-link " +
           link.className
         }
       >
-        {image ? <Img {...image} /> : image.alt ? image.alt : "Logo"}
+        {image ? <Img {...image} /> : image.alt ? image.alt : ""}
+        {link.text
+          ? <span className={textClassName}>
+              {link.text}
+            </span>
+          : ""}
       </Link>
     );
   }
 
   renderLinks(links) {
     return links.map(link => {
-      if (link.children && link.children.length > 0) {
-        return <Dropdown link={link} key={uuid.v4()}/>;
-      } else {
-        return <RenderNavLink link={link} key={uuid.v4()} />;
+      if (!link.hiddenNav) {
+        if (link.children && link.children.length > 0) {
+          return <Dropdown link={link} key={uuid.v4()} />;
+        } else {
+          return <RenderNavLink link={link} key={uuid.v4()} />;
+        }
       }
     });
   }
@@ -85,7 +92,7 @@ class Navbar extends Component {
     return (
       <nav
         className={
-          "w3-sidebar w3-bar-block  w3-card-2 w3-animate-left w3-hide-medium w3-hide-large w3-theme " +
+          "w3-sidebar w3-bar-block  w3-card-2 w3-animate-left w3-hide-medium w3-hide-large " +
           mobileNavClassName +
           " " +
           this.state.mobileNavClass
@@ -108,7 +115,7 @@ class Navbar extends Component {
   renderDesktopNav(links) {
     const { navbarClassName, toggleNav, logo, leftLinks, rightLinks } = links;
     return (
-      <div className={"w3-bar w3-theme " + navbarClassName} id="topNavbar">
+      <div className={"w3-bar " + navbarClassName} id="topNavbar">
         {this.renderToggleNav(toggleNav)}
         {this.renderLogo(logo)}
         {this.renderNavLinks(leftLinks, "w3-left")}
