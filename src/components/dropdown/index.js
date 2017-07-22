@@ -32,7 +32,7 @@ class Dropdown extends React.Component {
           onClick={this.dropdownClick}
           className={"w3-button " + link.className}
         >
-          {link.text} <i className="caret-down" />
+          {link.text} <i className="fa fa-caret-down" />
         </a>
         <div
           className={

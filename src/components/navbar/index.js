@@ -28,7 +28,7 @@ class Navbar extends Component {
     return (
       <a
         className={
-          "w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right " +
+          "w3-bar-item w3-button w3-hide-large w3-right " +
           className
         }
         onClick={this.toggleNavbar}
@@ -75,7 +75,7 @@ class Navbar extends Component {
   renderNavLinks(navLinks, pullClass) {
     const { className, links } = navLinks;
     return (
-      <div className={"w3-hide-small " + pullClass + " " + className}>
+      <div className={"w3-hide-small w3-hide-medium " + pullClass + " " + className}>
         {this.renderLinks(links)}
       </div>
     );
