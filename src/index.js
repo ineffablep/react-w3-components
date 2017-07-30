@@ -3,6 +3,7 @@ import ReactDOM from "react-dom";
 import App from "./App";
 import { BrowserRouter } from "react-router-dom";
 import "./index.css";
+
 export default function initReactAPP(id, schema, schemaUrl) {
   ReactDOM.render(
     <BrowserRouter>
@@ -11,3 +12,4 @@ export default function initReactAPP(id, schema, schemaUrl) {
     document.getElementById(id)
   );
 }
+//initReactAPP('root',null,'/schema.json');

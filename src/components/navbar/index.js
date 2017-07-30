@@ -24,13 +24,13 @@ class Navbar extends Component {
   }
 
   renderToggleNav(toggleNav) {
+    if (!toggleNav) {
+      toggleNav = { className: "", title: "", icon: "" };
+    }
     const { className, title, icon } = toggleNav;
     return (
       <a
-        className={
-          "w3-bar-item w3-button w3-hide-large w3-right " +
-          className
-        }
+        className={"w3-bar-item w3-button w3-hide-large w3-right " + className}
         onClick={this.toggleNavbar}
         title={title ? title : "Toggle Navigation Menu"}
       >
@@ -40,6 +40,9 @@ class Navbar extends Component {
   }
 
   renderLogo(logo) {
+    if (!logo) {
+      logo = { link: "/", image: null, textClassName: "" };
+    }
     const { link, image, textClassName } = logo;
 
     return (
@@ -50,7 +53,7 @@ class Navbar extends Component {
           link.className
         }
       >
-        {image ? <Img {...image} /> : image.alt ? image.alt : ""}
+        {image ? <Img {...image} /> : ""}
         {link.text
           ? <span className={textClassName}>
               {link.text}
@@ -69,13 +72,18 @@ class Navbar extends Component {
           return <RenderNavLink link={link} key={uuid.v4()} />;
         }
       }
+      return null;
     });
   }
 
   renderNavLinks(navLinks, pullClass) {
     const { className, links } = navLinks;
     return (
-      <div className={"w3-hide-small w3-hide-medium " + pullClass + " " + className}>
+      <div
+        className={
+          "w3-hide-small w3-hide-medium " + pullClass + " " + className
+        }
+      >
         {this.renderLinks(links)}
       </div>
     );
@@ -88,7 +96,13 @@ class Navbar extends Component {
       leftLinks,
       rightLinks
     } = links;
-    const navLinks = [...rightLinks.links, ...leftLinks.links];
+    let navLinks = [];
+    if (leftLinks && leftLinks.links) {
+      navLinks.concat(...leftLinks.links);
+    }
+    if (rightLinks && rightLinks.links) {
+      navLinks.concat(...rightLinks.links);
+    }
     return (
       <nav
         className={
@@ -118,8 +132,8 @@ class Navbar extends Component {
       <div className={"w3-bar " + navbarClassName} id="topNavbar">
         {this.renderToggleNav(toggleNav)}
         {this.renderLogo(logo)}
-        {this.renderNavLinks(leftLinks, "w3-left")}
-        {this.renderNavLinks(rightLinks, "w3-right")}
+        {leftLinks && this.renderNavLinks(leftLinks, "w3-left")}
+        {rightLinks && this.renderNavLinks(rightLinks, "w3-right")}
       </div>
     );
   }
@@ -128,8 +142,8 @@ class Navbar extends Component {
     const { links } = this.props;
     return (
       <header className="w3-row">
-        {this.renderDesktopNav(links)}
-        {this.renderMobileNav(links)}
+        {links && this.renderDesktopNav(links)}
+        {links && this.renderMobileNav(links)}
       </header>
     );
   }

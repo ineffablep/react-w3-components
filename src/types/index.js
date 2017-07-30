@@ -21,11 +21,31 @@ export interface IMeta {
 
 export interface IRoutes {
   text: string,
-  url: string,
+  path: string,
   json: Array<IJson>
 }
 
 export interface IAlert {
   alertText: string,
   className: string
+}
+export interface IColumn{
+
+  id:string;
+  displayText:string;
+  className:string;
+  canSort:boolean;
+  canFilter:boolean;
+  canGroup:boolean;
+  canResize:boolean;
+  canReorder:boolean;
+  hidden:boolean;
+
+  style:{};
+}
+
+export interface ITable {
+  className:string;
+  columns:Array<IColumn>;
+  data:[]
 }

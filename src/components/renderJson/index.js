@@ -7,7 +7,7 @@ import RenderItem from "./renderItem";
 const RenderJson = ({ json }: { json: Array<IJson> }) => {
   return (
     <div>
-      {json.map(_ => {
+      {json && json.map(_ => {
         return <RenderItem key={uuid.v4()} SchemaView={SchemaView} json={_} />;
       })}
     </div>

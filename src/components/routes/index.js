@@ -9,16 +9,18 @@ import { IRoutes } from "../../types";
 const Routes = ({ routeList }: { routeList: Array<IRoutes> }) =>
   <div className="w3-row">
     <Switch>
-      {routeList.map(_ => {
-        return (
-          <Route
-            exact
-            key={uuid.v4()}
-            path={_.url}
-            render={() => <RenderPage {..._} />}
-          />
-        );
-      })}
+      {routeList &&
+        routeList.map(_ => {
+          console.log(_);
+          return _ && _.path
+            ? <Route
+                exact
+                key={uuid.v4()}
+                path={_.path}
+                render={() => <RenderPage {..._} />}
+              />
+            : null;
+        })}
       <Route path="*" component={NotFound} />
     </Switch>
   </div>;

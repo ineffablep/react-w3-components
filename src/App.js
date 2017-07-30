@@ -23,26 +23,31 @@ class App extends Component {
       return null;
     }
     const { leftLinks, rightLinks, footer, logo, others } = this.state.Schema;
-    let routes = [...leftLinks.links, ...rightLinks.links]
+    let links = [];
+    if (leftLinks && leftLinks.links) {
+      links.push(...leftLinks.links);
+    }
+    if (rightLinks && rightLinks.links) {
+      links.push(...rightLinks.links);
+    }
+    let routes = links
       .reduce((a, b) => {
-        return b.children ? a.concat(...b.children).concat(b) : a.concat(b);
+        return b.children ? a.concat(...b.children, b) : a.concat(b);
       }, [])
       .map(_ => {
         return {
-          url: _.path,
-          json: _.json,
-          text: _.text,
-          title: _.title,
-          links: _.links,
-          metas: _.metas
+          ..._
         };
       });
-    routes.push({ url: logo.link });
+
+    if (logo) {
+      routes.push({ ...logo.link });
+    }
     return (
       <div className="w3-row w3-wrapper">
         <Navbar links={this.state.Schema} />
         <div className="w3-main">
-        <RenderJson json={others}/>
+          <RenderJson json={others} />
           <Routes routeList={routes} />
         </div>
         <div className="w3-push" />

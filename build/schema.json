@@ -3,7 +3,7 @@
   "mobileNavClassName": "",
   "navbarCloseButtonClassName": "",
   "logo": {
-    "link": { "to": "/", "className": "" },
+    "link": { "path": "/", "className": "" },
     "image": { "src": "", "alt": "Company Name", "className": "" }
   },
   "toggleNav": {
@@ -74,6 +74,10 @@
             "component": "Panel",
             "panelText": "Test Notes",
             "className": "w3-yellow w3-leftbar w3-rightbar w3-border-red"
+          },
+          {
+            "component":"div",
+            "className":"w3-img"
           },
           {
             "component": "Alert",

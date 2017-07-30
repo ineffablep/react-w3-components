@@ -6,7 +6,7 @@ const Footer = props => {
   const { className, children } = props;
   return (
     <footer className={"w3-footer " + className}>
-      {children.map(_ => {
+      {children && children.map(_ => {
         return <RenderJson key={uuid.v4()} SchemaView={SchemaView} json={_} />;
       })}
     </footer>
