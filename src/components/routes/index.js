@@ -11,7 +11,6 @@ const Routes = ({ routeList }: { routeList: Array<IRoutes> }) =>
     <Switch>
       {routeList &&
         routeList.map(_ => {
-          console.log(_);
           return _ && _.path
             ? <Route
                 exact
