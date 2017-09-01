@@ -10,6 +10,8 @@ import Progress from "../progress";
 import PercentageStats from "../stats/percentageStats";
 import NumberStats from "../stats/numberStats";
 import Footer from '../footer';
+import Spin from '../spin';
+
 const componentMap = {
   Form,
   Panel,
@@ -20,6 +22,7 @@ const componentMap = {
   PercentageStats,
   NumberStats,
   Badge,
+  Spin,
   Footer
 };
 const SchemaView = new ReactSchemaViews();

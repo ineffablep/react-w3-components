@@ -25,9 +25,10 @@ class Alert extends React.Component {
   }
 
   render() {
-    const { alertText, className } = this.props;
+    let { alertText, className } = this.props;
+    className = className || ' w3-theme ';
     return (
-      <div className={"w3-panel w3-theme " + this.state.toggleClass + " " + className}>
+      <div className={"w3-panel " + this.state.toggleClass + " " + className}>
         <span
           className="w3-button w3-large  w3-right"
           onClick={this.onCloseClick}

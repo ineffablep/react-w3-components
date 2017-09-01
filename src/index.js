@@ -12,4 +12,4 @@ export default function initReactAPP(id, schema, schemaUrl) {
     document.getElementById(id)
   );
 }
-//initReactAPP('root',null,'/schema.json');
+initReactAPP('root',null,'/schema.json');
