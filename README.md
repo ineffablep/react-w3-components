@@ -1,3 +1,4 @@
+``` json
 {
   "navbarClassName": "w3-white w3-padding",
   "mobileNavClassName": "",
@@ -105,3 +106,4 @@
     "links": []
   }
 }
+```
